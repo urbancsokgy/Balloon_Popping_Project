@@ -32,13 +32,20 @@ body{
     margin: 0 auto;
 }
 .balloon{
+    display: flex;
+    align-items:center;
+    justify-content:center;
     border-radius: 5rem;
     border: orangered 2px solid;
     width: 4rem;
     height: 4rem;
-    display: inline-block;
-    background-color: yellow;
-}
+    text-align: center;
+    margin: auto auto;
+}    
+
+
 .boom{
-    background-color: red;
+    border: none;
+    background-color: white;
+    color: green;
 }
