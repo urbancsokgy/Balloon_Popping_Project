@@ -8,15 +8,17 @@ function setBalloon(){
     element.style.backgroundColor= "#" + randomColor;
   });
 }; setBalloon();
+//eseményfigyelő
 
-
-(function bclick(){
-  balloon.forEach(element => {
-    element.addEventListener('click', (event) =>{
+function bclick(){
+   balloon.forEach(element => {
+    element.addEventListener('mouseenter', (event) =>{
       element.classList.add('boom');
       element.innerHTML='<span>OOPs</span>';
       element.style.backgroundColor= 'white';
+      event.target.removeEventListener('mouseenter',()=>{} );
+      
+      })
     })
-  });
-})();
-
+  };
+bclick();
