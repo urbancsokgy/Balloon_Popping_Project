@@ -1,4 +1,8 @@
 const balloon=document.querySelectorAll('.balloon');
+const wrap=document.querySelector('.wrap');
+const content=document.querySelector('.content');
+
+let counter=0;
 // Random color 
 function setBalloon(){
  
@@ -10,15 +14,22 @@ function setBalloon(){
 }; setBalloon();
 //eseményfigyelő
 
-function bclick(){
+(function mouseenter(){
    balloon.forEach(element => {
     element.addEventListener('mouseenter', (event) =>{
+      if(!element.classList.contains('boom')){
+      counter++;}
       element.classList.add('boom');
       element.innerHTML='<span>OOPs</span>';
       element.style.backgroundColor= 'white';
-      event.target.removeEventListener('mouseenter',()=>{} );
+     if (counter==25){
+      wrap.style.display='none';
+      content.innerHTML='<h1 class="title">Minden lufi kipukkadt!</h1>';
+     }
+    
       
-      })
+      } );
     })
-  };
-bclick();
+  })();
+ 
+  
